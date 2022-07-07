@@ -506,3 +506,11 @@ services:
     class: PrestaShop\PrestaShop\Adapter\Product\Update\ProductNoteUpdater
     arguments:
       - '@prestashop.adapter.product.repository.product_repository'
+
+  prestashop.adapter.product.command_handler.set_product_note_handler:
+    class: PrestaShop\PrestaShop\Adapter\Product\CommandHandler\SetProductNoteHandler
+    arguments:
+      - '@prestashop.adapter.product.product_note_updater'
+    tags:
+      - name: tactician.handler
+        command: PrestaShop\PrestaShop\Core\Domain\Product\Command\SetProductNoteCommand
