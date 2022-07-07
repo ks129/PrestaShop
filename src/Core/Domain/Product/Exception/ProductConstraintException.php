@@ -280,4 +280,9 @@ class ProductConstraintException extends ProductException
      * The product doesn't have the minimum data to be online.
      */
     public const INVALID_ONLINE_DATA = 500;
+
+    /**
+     * When product note is invalid
+     */
+    public const INVALID_NOTE = 510;
 }

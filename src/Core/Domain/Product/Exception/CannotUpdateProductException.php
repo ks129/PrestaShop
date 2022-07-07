@@ -120,4 +120,9 @@ class CannotUpdateProductException extends ProductException
      * When type update fails
      */
     public const FAILED_SHOP_COPY = 170;
+
+    /**
+     * When product note update fails.
+     */
+    public const FAILED_UPDATE_NOTE = 190;
 }
