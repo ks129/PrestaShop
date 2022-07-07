@@ -1660,6 +1660,7 @@ CREATE TABLE `PREFIX_product` (
   `product_type` ENUM(
     'standard', 'pack', 'virtual', 'combinations', ''
   ) NOT NULL DEFAULT '',
+  `note` TEXT,
   PRIMARY KEY (`id_product`),
   INDEX reference_idx(`reference`),
   INDEX supplier_reference_idx(`supplier_reference`),

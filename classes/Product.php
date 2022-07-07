@@ -377,6 +377,11 @@ class ProductCore extends ObjectModel
     public $product_type = ProductType::TYPE_UNDEFINED;
 
     /**
+     * @var string product note, only available in BO
+     */
+    public $note = '';
+
+    /**
      * @var int|null
      */
     public static $_taxCalculationMethod = null;
@@ -495,6 +500,7 @@ class ProductCore extends ObjectModel
                 // This default value should be replaced with ProductType::TYPE_STANDARD in 179 when the v2 page is fully migrated
                 'default' => ProductType::TYPE_UNDEFINED,
             ],
+            'note' => ['type' => self::TYPE_HTML],
 
             /* Shop fields */
             'id_category_default' => ['type' => self::TYPE_INT, 'shop' => true, 'validate' => 'isUnsignedId'],
@@ -621,6 +627,7 @@ class ProductCore extends ObjectModel
                 'getter' => 'getWsType',
                 'setter' => 'setWsType',
             ],
+            'note' => [],
         ],
         'associations' => [
             'categories' => [
