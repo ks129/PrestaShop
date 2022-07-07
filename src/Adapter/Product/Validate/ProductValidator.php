@@ -95,6 +95,7 @@ class ProductValidator extends AbstractObjectModelValidator
         $this->validateSeo($product);
         $this->validatePrices($product);
         $this->validateOnlineRequirement($product);
+        $this->validateNote($product);
     }
 
     /**
@@ -226,6 +227,14 @@ class ProductValidator extends AbstractObjectModelValidator
         $this->validateProductLocalizedProperty($product, 'meta_description', ProductConstraintException::INVALID_META_DESCRIPTION);
         $this->validateProductLocalizedProperty($product, 'meta_title', ProductConstraintException::INVALID_META_TITLE);
         $this->validateProductLocalizedProperty($product, 'link_rewrite', ProductConstraintException::INVALID_LINK_REWRITE);
+    }
+
+    /**
+     * @param Product $product
+     */
+    private function validateNote(Product $product): void
+    {
+        $this->validateProductProperty($product, 'note', ProductConstraintException::INVALID_NOTE);
     }
 
     /**
